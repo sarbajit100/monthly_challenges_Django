@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+{% block page_title %}
     <title>{{month | title}} challenge</title>
-</head>
-<body>
+{% endblock  %}
+{% block contain %}
+    {%include "challenges/includes/header.html"%}
     <h1>{{month | title}} challenge</h1>
+    {%if text is not None%}
     <h2>{{text}}</h2>
-</body>
-</html>
+    {% else %}
+    <h2>No challenge is available here</h2>
+    {% endif %}
+{% endblock  %}
